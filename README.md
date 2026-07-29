@@ -73,9 +73,9 @@ The only way I managed to run KOReader is using a Debian chroot. Get the Debian 
 ```
 $ sudo apk add debootstrap xhost
 $ sudo debootstrap testing ~/debian http://http.debian.net/debian/
-$ cp koreader-2023.04-armhf.deb ~/chroot/root 
-$ mkdir -p ~/chroot/tmp/.X11-unix
-$ sudo chroot ~/chroot /bin/bash
+$ cp koreader-2023.04-armhf.deb ~/debian/root 
+$ mkdir -p ~/debian/tmp/.X11-unix
+$ sudo chroot ~/debian /bin/bash
 
 # inside the chroot:
 $ apt update && apt install libsdl2-2.0-0 fonts-noto-hinted fonts-droid-fallback 
