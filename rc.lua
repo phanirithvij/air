@@ -55,7 +55,7 @@ coldslider = wibox.widget({
 })
 
 coldslider:connect_signal("property::value", function(maybe, new_value)
-  naughty.notify({ title = maybe.value, text = "changed" })
+  naughty.notify({ title = tostring(maybe.value), text = "changed" })
   awful.spawn("brightnessctl -d 'backlight_cold' s " .. maybe.value)
 end)
 
@@ -76,7 +76,7 @@ warmslider = wibox.widget({
 })
 
 warmslider:connect_signal("property::value", function(maybe, new_value)
-  naughty.notify({ title = maybe.value, text = "changed" })
+  naughty.notify({ title = tostring(maybe.value), text = "changed" })
   awful.spawn("brightnessctl -d 'backlight_warm' s " .. maybe.value)
 end)
 
